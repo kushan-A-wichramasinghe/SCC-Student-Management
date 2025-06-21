@@ -2,7 +2,7 @@ const db = require('../config/db');
 
 const Teacher = {
   getAll: (callback) => {
-    db.query('SELECT * FROM teachers', callback);
+    db.query('SELECT * FROM teachers ORDER BY name ASC', callback);
   },
 
   getById: (id, callback) => {
@@ -19,10 +19,10 @@ const Teacher = {
   },
 
   update: (id, data, callback) => {
-    const { name, email, subject, password } = data;
+    const { name, email, subject } = data;
     db.query(
-      'UPDATE teachers SET name = ?, email = ?, subject = ?, password = ? WHERE id = ?',
-      [name, email, subject, password, id],
+      'UPDATE teachers SET name = ?, email = ?, subject = ? WHERE id = ?',
+      [name, email, subject, id],
       callback
     );
   },
