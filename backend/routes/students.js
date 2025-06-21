@@ -1,45 +1,20 @@
 const express = require('express');
 const router = express.Router();
-const Student = require('../models/Student');
+const studentController = require('../controllers/studentController');
 
-// GET all students
-router.get('/', (req, res) => {
-  Student.getAll((err, results) => {
-    if (err) return res.status(500).json({ error: err.message });
-    res.json(results);
-  });
-});
+// Get all students
+router.get('/', studentController.getAllStudents);
 
-// GET student by ID
-router.get('/:id', (req, res) => {
-  Student.getById(req.params.id, (err, result) => {
-    if (err) return res.status(500).json({ error: err.message });
-    res.json(result[0]);
-  });
-});
+// Get student by ID
+router.get('/:id', studentController.getStudentById);
 
-// CREATE new student
-router.post('/', (req, res) => {
-  Student.create(req.body, (err, result) => {
-    if (err) return res.status(500).json({ error: err.message });
-    res.status(201).json({ message: 'Student created successfully' });
-  });
-});
+// Create a new student
+router.post('/', studentController.createStudent);
 
-// UPDATE student
-router.put('/:id', (req, res) => {
-  Student.update(req.params.id, req.body, (err, result) => {
-    if (err) return res.status(500).json({ error: err.message });
-    res.json({ message: 'Student updated successfully' });
-  });
-});
+// Update student details
+router.put('/:id', studentController.updateStudent);
 
-// DELETE student
-router.delete('/:id', (req, res) => {
-  Student.delete(req.params.id, (err, result) => {
-    if (err) return res.status(500).json({ error: err.message });
-    res.json({ message: 'Student deleted successfully' });
-  });
-});
+// Delete a student
+router.delete('/:id', studentController.deleteStudent);
 
 module.exports = router;
