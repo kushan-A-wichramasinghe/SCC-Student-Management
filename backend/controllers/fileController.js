@@ -1,5 +1,4 @@
 const File = require('../models/File');
-const path = require('path');
 
 // Upload file
 exports.uploadFile = (req, res) => {
