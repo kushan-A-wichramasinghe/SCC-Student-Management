@@ -6,7 +6,8 @@ const port = process.env.PORT || 5000;
 // Middlewares
 app.use(cors());
 app.use(express.json());
-
+// Add this line to serve uploaded files
+app.use('/uploads', express.static('uploads'));
 // Routes
 app.use('/api/students', require('./routes/students'));
 app.use('/api/teachers', require('./routes/teachers'));
