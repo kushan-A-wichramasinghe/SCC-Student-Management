@@ -10,19 +10,26 @@ const Teacher = {
   },
 
   create: (data, callback) => {
-    const sql = 'INSERT INTO teachers (name, email, subject) VALUES (?, ?, ?)';
-    db.query(sql, [data.name, data.email, data.subject], callback);
+    const { name, email, subject, password } = data;
+    db.query(
+      'INSERT INTO teachers (name, email, subject, password) VALUES (?, ?, ?, ?)',
+      [name, email, subject, password],
+      callback
+    );
   },
 
   update: (id, data, callback) => {
-    const sql = 'UPDATE teachers SET name = ?, email = ?, subject = ? WHERE id = ?';
-    db.query(sql, [data.name, data.email, data.subject, id], callback);
+    const { name, email, subject, password } = data;
+    db.query(
+      'UPDATE teachers SET name = ?, email = ?, subject = ?, password = ? WHERE id = ?',
+      [name, email, subject, password, id],
+      callback
+    );
   },
 
   delete: (id, callback) => {
     db.query('DELETE FROM teachers WHERE id = ?', [id], callback);
-  }
+  },
 };
 
 module.exports = Teacher;
-
