@@ -1,3 +1,5 @@
+// 📂 frontend/assets/js/dashboard.js
+
 fetch('/api/dashboard')
   .then(res => res.json())
   .then(data => {
