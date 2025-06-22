@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Term Marks</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-900 text-white p-6">
+
+  <h1 class="text-2xl font-bold mb-4">Add Term Test Marks</h1>
+
+  <form id="marks-form" class="max-w-md bg-gray-800 p-4 rounded">
+    <input type="number" id="student_id" placeholder="Student ID" class="w-full p-2 mb-2 text-black rounded" required />
+    <input type="text" id="subject" placeholder="Subject" class="w-full p-2 mb-2 text-black rounded" required />
+    <input type="text" id="term" placeholder="Term (e.g., 1st Term)" class="w-full p-2 mb-2 text-black rounded" required />
+    <input type="number" id="year" placeholder="Year" class="w-full p-2 mb-2 text-black rounded" required />
+    <input type="number" id="marks" placeholder="Marks" class="w-full p-2 mb-2 text-black rounded" required />
+    <button type="submit" class="bg-blue-600 hover:bg-blue-800 px-4 py-2 rounded">Submit</button>
+    <p id="response-msg" class="mt-2 text-green-400"></p>
+  </form>
+
+  <script src="assets/js/add-marks.js"></script>
+</body>
+      </html>
