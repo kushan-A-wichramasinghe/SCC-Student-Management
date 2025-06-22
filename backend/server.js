@@ -14,6 +14,7 @@ app.use('/api/comments', require('./routes/comments'));
 app.use('/api/subjects', require('./routes/subjects'));
 app.use('/api/notifications', require('./routes/notifications'));
 app.use('/api/dashboard', require('./routes/dashboard'));
+app.use('/api/term-marks', require('./routes/termMarks'));
 // Add this line to serve uploaded files
 app.use('/uploads', express.static('uploads'));
 // Root route
