@@ -1,1 +1,23 @@
+<!-- Comment Submit Form -->
+<div class="bg-gray-800 text-white p-6 rounded-lg shadow-lg max-w-xl mx-auto mt-8">
+  <h2 class="text-xl font-bold mb-4">Submit Your Feedback</h2>
 
+  <form id="comment-form">
+    <label class="block mb-2">Type:</label>
+    <select id="comment_type" class="w-full mb-4 p-2 text-black rounded">
+      <option value="feedback">Feedback</option>
+      <option value="complaint">Complaint</option>
+      <option value="suggestion">Suggestion</option>
+    </select>
+
+    <label class="block mb-2">Comment:</label>
+    <textarea id="comment_content" rows="4" class="w-full p-2 text-black rounded mb-4" placeholder="Enter your comment here..."></textarea>
+
+    <button type="submit" class="bg-blue-600 hover:bg-blue-800 px-4 py-2 rounded">Submit</button>
+  </form>
+
+  <p id="comment-msg" class="mt-4 text-green-400"></p>
+</div>
+
+<!-- JS -->
+<script src="assets/js/comment.js"></script>
