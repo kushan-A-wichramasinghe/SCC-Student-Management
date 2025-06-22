@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notifications</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white p-6 font-sans">
+
+  <h1 class="text-2xl font-bold mb-6 text-center">All Notifications</h1>
+
+  <!-- 🔔 Notification Form (Only for Admin/Teacher) -->
+  <form id="notification-form" class="bg-gray-800 p-4 rounded-lg max-w-xl mx-auto mb-6">
+    <h2 class="text-xl mb-2">Create Notification</h2>
+    <input type="text" id="title" placeholder="Title" class="w-full p-2 mb-2 text-black rounded" required>
+    <textarea id="message" placeholder="Message" class="w-full p-2 mb-2 text-black rounded" required></textarea>
+    <select id="sender_role" class="w-full p-2 mb-2 text-black rounded">
+      <option value="admin">Admin</option>
+      <option value="teacher">Teacher</option>
+    </select>
+    <button type="submit" class="bg-blue-600 hover:bg-blue-800 px-4 py-2 rounded">Send</button>
+    <p id="notif-msg" class="mt-2 text-green-400"></p>
+  </form>
+
+  <!-- 📃 Notification List -->
+  <div id="notification-list" class="grid gap-4 max-w-4xl mx-auto"></div>
+
+  <script src="assets/js/notifications.js"></script>
+</body>
+      </html>
