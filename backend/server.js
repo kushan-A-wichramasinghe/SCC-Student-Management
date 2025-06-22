@@ -13,9 +13,9 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/comments', require('./routes/comments'));
 app.use('/api/subjects', require('./routes/subjects'));
 app.use('/api/notifications', require('./routes/notifications'));
+app.use('/api/dashboard', require('./routes/dashboard'));
 // Add this line to serve uploaded files
 app.use('/uploads', express.static('uploads'));
-app.use('/api/dashboard', require('./routes/dashboard'));
 // Root route
 app.get('/', (req, res) => {
   res.send('SCC Student Management System Backend Running...');
